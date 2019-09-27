@@ -60,17 +60,50 @@ func main() {
 
 		fmt.Println("-----------------------------------")
 		sum := 0
-		for i, v := range num {//range returns both the index and value
+		for i, v := range num { //range returns both the index and value
 			fmt.Printf("%.2d the element of a is %.3d\n", i, v)
 			sum += v
 		}
-		fmt.Println("\nsum of all elements of a",sum)
+		fmt.Println("\nsum of all elements of a", sum)
+
+		fmt.Println("-----------------------------------")
+		sum = 0
+		for _, v := range num { //range returns both the index and value
+			sum += v
+		}
+		fmt.Println("\nsum of all elements of a", sum)
+	}
+	fmt.Println("-----------------------------------")
+	{
+		a := [3][2]string{
+			{"lion", "tiger"},
+			{"cat", "dog"},
+			{"pigeon", "peacock"}, //this comma is necessary. The compiler will complain if you omit this comma
+		}
+		printarray(a)
+		var b [3][2]string
+		b[0][0] = "apple"
+		b[0][1] = "samsung"
+		b[1][0] = "microsoft"
+		b[1][1] = "google"
+		b[2][0] = "AT&T"
+		b[2][1] = "T-Mobile"
+		fmt.Printf("\n")
+		printarray(b)
 	}
 }
-
 
 func changeLocal(num [5]int) {
 	num[0] = 55
 	fmt.Println("inside function ", num)
 
+}
+
+func printarray(a [3][2]string) {
+	for _, v1 := range a {
+		for _, v2 := range v1 {
+			fmt.Printf("%.5s \t", v2)
+		}
+		fmt.Printf("\n")
+	}
 }
