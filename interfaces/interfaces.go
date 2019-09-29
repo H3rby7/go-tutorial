@@ -90,4 +90,17 @@ func main() {
 		findType(MyString("im a string. yeah!"))
 		findType("im a string. yeah!")
 	}
+	fmt.Println("\n-----------------------------------")
+	{
+		var thing VowelsFinder
+		if thing == nil {
+			fmt.Printf("d1 is nil and has type %T value %v\n", thing, thing)
+		}
+		// Line below would error (panic)
+		// thing.FindVowels()
+
+		// Cannot catch an error this way. Well I tried *shrugs* :D
+		// ok := thing.FindVowels()
+		// fmt.Println("We good?", ok)
+	}
 }
