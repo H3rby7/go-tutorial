@@ -51,6 +51,10 @@ func main() {
 		pointerPointer := &pointer
 		fmt.Printf("Pointer                                      points at %v   and the value is %d\n", pointer, *pointer)
 		fmt.Printf("pointerPointer points at %v and the value is %v, which resolves to %d\n", pointerPointer, *pointerPointer, **pointerPointer)
+		b := 6
+		pointer = &b
+		fmt.Printf("Pointer                                      points at %v   and the value is %d\n", pointer, *pointer)
+		fmt.Printf("pointerPointer points at %v and the value is %v, which resolves to %d\n", pointerPointer, *pointerPointer, **pointerPointer)
 	}
 }
 
