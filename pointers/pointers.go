@@ -48,13 +48,18 @@ func main() {
 	fmt.Println("\n-----------------------------------")
 	{
 		pointer := getAnIntPointer()
+		fmt.Printf("Find the pointer via 'v' %v or 'p' %p\n", pointer, pointer)
+	}
+	fmt.Println("\n-----------------------------------")
+	{
+		pointer := getAnIntPointer()
 		pointerPointer := &pointer
 		fmt.Printf("Pointer                                      points at %v   and the value is %d\n", pointer, *pointer)
-		fmt.Printf("pointerPointer points at %v and the value is %v, which resolves to %d\n", pointerPointer, *pointerPointer, **pointerPointer)
+		fmt.Printf("pointerPointer points at %p and the value is %p, which resolves to %d\n", pointerPointer, *pointerPointer, **pointerPointer)
 		b := 6
 		pointer = &b
 		fmt.Printf("Pointer                                      points at %v   and the value is %d\n", pointer, *pointer)
-		fmt.Printf("pointerPointer points at %v and the value is %v, which resolves to %d\n", pointerPointer, *pointerPointer, **pointerPointer)
+		fmt.Printf("pointerPointer points at %p and the value is %p, which resolves to %d\n", pointerPointer, *pointerPointer, **pointerPointer)
 	}
 }
 
